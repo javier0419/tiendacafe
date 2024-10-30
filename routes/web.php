@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +13,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('plantilla');
+});
+
+Route::get('/menu',\App\Livewire\CatalogoCafe::class)->name('catalogo.cafe');  
+
+Route::get('/plantilla', function () {
+    return view('plantilla');
+});
+
+Route::get('/welcome', function () {
     return view('welcome');
 });
+
+//ruta del carrito
+Route::post('/agregar-al-carrito', 
+'CarritoController@agregarAlCarrito')->name('agregar.al.carrito');

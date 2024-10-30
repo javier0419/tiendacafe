@@ -181,3 +181,43 @@ Crear el modelo para productos
 -php artisan make:model Producto
 
 
+app
+ model
+   producto.php  =>Modelo. aki toma los campos de la base de datos
+ livewire
+ 	catalogocafe.php   => almacena los datos de la tabla
+
+resourse
+ views
+     welcome.blade.php  => llama a la vista 'catalogo-café.blade.php'
+  livewire
+	catalogo-café.blade.php   => vista de la tabla
+
+
+
+
+
+
+composer install
+npm install
+
+copy .env.example .env
+Generate an application key
+
+php artisan key:generate
+Create a symbolic link for the storage directory
+
+php artisan storage:link
+Set the filesystem disk to public in the .env file
+
+FILESYSTEM_DISK=public
+Migrate the database
+
+php artisan migrate
+Seed the database with sample data (optional):
+
+php artisan db:seed
+Start the development server
+
+php artisan serve
+
